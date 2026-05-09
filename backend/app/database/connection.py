@@ -7,15 +7,16 @@ from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.pool import NullPool
 
 from app.utils.logger import logger
+from app.config import settings
 
-# Get database URL from environment variable
-DATABASE_URL = os.getenv("DATABASE_URL", "")
+# Get database URL from settings
+DATABASE_URL = settings.DATABASE_URL
 
 # Create engine with connection pooling disabled for serverless
 engine = create_engine(
     DATABASE_URL,
     poolclass=NullPool,  # Recommended for serverless/Neon
-    echo=os.getenv("DEBUG", "false").lower() == "true",
+    echo=settings.DEBUG,
 )
 
 # Create session factory
