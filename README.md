@@ -20,21 +20,18 @@ Frontend (React + Vite) → Backend (FastAPI) → AI Agent (LiteLLM) → Local W
 
 ### Tech Stack
 - **Frontend**: React, Vite, Monaco Editor, TailwindCSS
-- **Backend**: Python, FastAPI, Pydantic
-- **AI**: LiteLLM (supports OpenAI, Gemini, Anthropic)
-- **Deployment**: Docker, Nginx, AWS EC2
+- **Backend**: Python, FastAPI, Pydantic, SQLAlchemy
+- **Database**: Neon Postgres (Serverless Cloud Database)
+- **AI**: FreeTheAI API (GLM-5.1 / Gemini / Anthropic)
+- **Deployment**: Nginx, AWS EC2, Systemd, DuckDNS
 
 ## Project Structure
 
-```
+```text
 LocalCopilot/
-├── backend/           # Python FastAPI server
+├── backend/           # Python FastAPI server + Agent Logic
 ├── frontend/          # React + Vite application
-├── static/            # Built frontend (served by backend)
-├── workspace/         # User project files (sandboxed)
-├── nginx/             # Nginx configuration
-├── scripts/           # Deployment scripts
-├── docker-compose.yml # Docker configuration
+├── workspace/         # Sandboxed user project files
 └── README.md
 ```
 
@@ -132,11 +129,11 @@ Understand how unfamiliar code works by asking questions.
 ## Development Roadmap
 
 - [x] Project structure
-- [ ] Backend Core
-- [ ] Frontend Components
-- [ ] AI Agent Integration
-- [ ] Docker & Deployment
-- [ ] Advanced Features
+- [x] Backend Core (FastAPI & Neon Postgres)
+- [x] Frontend Components & Monaco Editor
+- [x] AI Agent Integration (Orchestrator & Tools)
+- [x] Secure AWS EC2 Deployment (Nginx & Systemd)
+- [x] Secure Environment Configurations
 
 ## Contributing
 
